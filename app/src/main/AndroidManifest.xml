@@ -33,6 +33,31 @@
             android:screenOrientation="portrait"
             android:configChanges="keyboard|keyboardHidden|orientation" >
         </activity>
+        <activity android:label="First Triangle Test"
+            android:name=".FirstTriangleTest"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboard|keyboardHidden|orientation" >
+        </activity>
+        <activity android:label="Colored Triangle Test"
+            android:name=".ColoredTriangleTest"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboard|keyboardHidden|orientation" >
+        </activity>
+        <activity android:label="Textured Triangle Test"
+            android:name=".TexturedTriangleTest"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboard|keyboardHidden|orientation" >
+        </activity>
+        <activity android:label="Indexed Test"
+            android:name=".IndexedTest"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboard|keyboardHidden|orientation" >
+        </activity>
+        <activity android:label="Blending Test"
+            android:name=".BlendingTest"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboard|keyboardHidden|orientation" >
+        </activity>
     </application>
 
 </manifest>
