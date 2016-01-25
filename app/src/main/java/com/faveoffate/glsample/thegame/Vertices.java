@@ -46,6 +46,15 @@ public class Vertices {
     }
     public void draw(int primitiveType, int offset, int numVertices) {
         GL10 gl = glGraphics.getGL();
+        if(indices!=null) {
+            indices.position(offset);
+            gl.glDrawElements(primitiveType, numVertices, GL10.GL_UNSIGNED_SHORT, indices);
+        } else {
+            gl.glDrawArrays(primitiveType, offset, numVertices);
+        }
+    }
+    public void bind() {
+        GL10 gl = glGraphics.getGL();
         gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         vertices.position(0);
         gl.glVertexPointer(2, GL10.GL_FLOAT, vertexSize, vertices);
@@ -59,13 +68,9 @@ public class Vertices {
             vertices.position(hasColor?6:2);
             gl.glTexCoordPointer(2, GL10.GL_FLOAT, vertexSize, vertices);
         }
-        if(indices!=null) {
-            indices.position(offset);
-            gl.glDrawElements(primitiveType, numVertices, GL10.GL_UNSIGNED_SHORT,
-                    indices);
-        } else {
-            gl.glDrawArrays(primitiveType, offset, numVertices);
-        }
+    }
+    public void unbind() {
+        GL10 gl = glGraphics.getGL();
         if(hasTexCoords)
             gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
         if(hasColor)

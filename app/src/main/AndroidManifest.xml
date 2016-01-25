@@ -58,6 +58,11 @@
             android:screenOrientation="portrait"
             android:configChanges="keyboard|keyboardHidden|orientation" >
         </activity>
+        <activity android:label="Bob Test"
+            android:name=".BobTest"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboard|keyboardHidden|orientation" >
+        </activity>
     </application>
 
 </manifest>
